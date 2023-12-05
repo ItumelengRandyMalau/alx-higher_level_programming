@@ -6,5 +6,5 @@ if __name__ == "__main__":
 
     fil_names = sorted(name for name in mod_names if not name.startswith('__'))
 
-    for name in filtered_names:
+    for name in fil_names:
         print(name)
