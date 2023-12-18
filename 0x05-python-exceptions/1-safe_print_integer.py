@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
+        # Try to print the value as an integer using "{:d}".format()
         print("{:d}".format(value))
-        print()
+        print()  # Print a new line
         return True
-
-    except (TypeError, ValueError):
+    except (ValueError, TypeError):
         return False
