@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     result_list = []
 
@@ -15,6 +15,8 @@ def list_division(my_list_1, my_list_2, list_length):
             # Check if the divisor is not zero
             if element_2 == 0:
                 raise ZeroDivisionError("division by 0")
+            if len(my_list_1) <= i or len (my_list_2) <= i:
+                raise IndexError("out of range")
 
             result = element_1 / element_2
         except TypeError as e:
