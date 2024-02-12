@@ -77,17 +77,33 @@ class Rectangle(Base):
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
-        for i in enumerate(args):
-            if i == 0:
-                self.id = arg
-            elif i == 1:
-                self.width = arg
-            elif i == 2:
-                self.height= arg
-            elif i == 3:
-                self.x == arg
-            elif i == 4:
-                self.height = arg
-            else:
-                continue
+    def update(self, *args, **kwargs):
+        if args:
+            for i in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height= arg
+                elif i == 3:
+                    self.x == arg
+                elif i == 4:
+                    self.height = arg
+                else:
+                    continue
+        elif len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+                else:
+                    break
+
