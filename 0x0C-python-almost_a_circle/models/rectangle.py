@@ -68,8 +68,26 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        for i in range(self.y):
+            print()
+
         for i in range(self.height):
-            print("#" * self.width)
+            print(" " *self.x + "#" * self.width)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        for i in enumerate(args):
+            if i == 0:
+                self.id = arg
+            elif i == 1:
+                self.width = arg
+            elif i == 2:
+                self.height= arg
+            elif i == 3:
+                self.x == arg
+            elif i == 4:
+                self.height = arg
+            else:
+                continue
