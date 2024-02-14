@@ -11,4 +11,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """Represents the  new str method for the child"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
