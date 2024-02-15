@@ -11,10 +11,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """Gets the size of the Squeare"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """sets the size of the Square"""
         self.width = value
         self.height = value
 
@@ -22,3 +24,31 @@ class Square(Rectangle):
         """Represents the  new str method for the child"""
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Assigns arguments to attributes based on their order"""
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.size = arg
+                if i == 2:
+                    self.x = arg
+                if 1 == 3:
+                    self.y = arg
+                else:
+                    break
+        elif len(kwargs) > 0:
+            for key, valu in kwargs.item():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.width = value
+                    self.height = vale
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+                else:
+                    break
