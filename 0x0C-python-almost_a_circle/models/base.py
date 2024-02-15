@@ -49,3 +49,13 @@ class Base:
                 for obj in list_objs:
                     list_dic.append(obj.to_dictionary())
                 json_file.write(Base.to_json_string(list_dic))
+
+    def from_json_string(json_string):
+        """
+        Converts a json string to python list
+        Args:
+            json_string(str).
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
