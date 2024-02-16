@@ -18,10 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets the value of width"""
         return self.__width
 
     @width.setter
     def width(self, width_val):
+        """sets the value of width"""
         if not isinstance(width_val, int):
             raise TypeError("width must be an integer")
         if width_val <= 0:
@@ -30,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Gets the value of height"""
         return self.__height
 
     @height.setter
     def height(self, height_val):
+        """sets the value of height"""
         if not isinstance(height_val, int):
             raise TypeError("height must be an integer")
         if height_val <= 0:
@@ -42,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Gets the x value"""
         return self.__x
 
     @x.setter
     def x(self, x_val):
+        """Sets value to x"""
         if not isinstance(x_val, int):
             raise TypeError("x must be an integer")
         if x_val < 0:
@@ -54,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Gets the value of y"""
         return self.__y
 
     @y.setter
     def y(self, y_val):
+        """Sets value to y"""
         if not isinstance(y_val, int):
             raise TypeError("y must be an integer")
         if y_val < 0:
@@ -65,9 +73,11 @@ class Rectangle(Base):
         self.__y = y_val
 
     def area(self):
+        """Returns the area of a rectangle"""
         return self.width * self.height
 
     def display(self):
+        """Prints the Rectangle instance with the character #"""
         for i in range(self.y):
             print()
 
@@ -75,10 +85,13 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
+        """str method, returns
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """assigns a key/value argument to attributes."""
         if args:
             for i in enumerate(args):
                 if i == 0:
