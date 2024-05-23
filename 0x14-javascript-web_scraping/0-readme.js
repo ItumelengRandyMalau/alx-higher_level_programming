@@ -9,5 +9,5 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     console.error('Error reading file:', err);
     return;
   }
-  console.log('File content:', data);
+  else console.log('File content:', data);
 });
